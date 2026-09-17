@@ -1,0 +1,23 @@
+services:
+  weatherforecastappliction:
+    ports:
+      - 80:8080
+    image: ${DOCKER_REGISTRY-}weatherforecastappliction
+    build:
+      context: .
+      dockerfile: WeatherForecastAppliction/Dockerfile
+  container1:
+    image: nicolaka/netshoot
+    tty: true
+    stdin_open: true
+    networks:
+      - my-super-network
+  container2:
+    image: nicolaka/netshoot
+    tty: true
+    stdin_open: true
+    networks:
+      - my-super-network
+networks:
+  my-super-network:
+    driver: bridge
