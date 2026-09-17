@@ -22,7 +22,7 @@ jobs:
         run: |
           docker build \
           -t ${{ secrets.DOCKERHUB_USERNAME }}/weather-forecast-app \
-          -f ./WeatherForecastAppliction/Dockerfile
+          -f ./WeatherForecastAppliction/Dockerfile \
           .
 
       - name: Push image
